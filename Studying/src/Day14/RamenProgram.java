@@ -1,4 +1,4 @@
-package Day13;
+package Day14;
 import java.util.Scanner;
 
 
@@ -48,15 +48,11 @@ class currentThread extends Thread
 	public RamenCook ramenCook;
 	static String nam;
 	
-	currentThread()
-	{
-		this(new RamenCook(5) , "");
-	}
 	
 	currentThread(RamenCook ramenCook , String nam)
 	{
 		this.ramenCook = ramenCook;
-		this.nam = nam;
+		currentThread.nam = nam;
 	}
 }
 

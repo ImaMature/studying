@@ -1,4 +1,4 @@
-package Day13;
+package Day14;
 
 class RamenCook extends Thread implements Runnable
 {
