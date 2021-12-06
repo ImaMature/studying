@@ -102,8 +102,11 @@ public class IntQueue {
 		if(num <= 0)
 			System.out.println("큐가 비었습니다.");
 		else {
+			//System.out.println("front"+front); //front는 0이 나옴 첫번째 인덱스
+			//System.out.println(max);				//max는 64 최대용량
+			
 			for(int i =0; i< num; i++)
-				System.out.println(que[(i+front) % max] + " ");
+				System.out.println(que[(i+front) % max] + " "); // % 몫0밑으로는 나머진
 			System.out.println();
 		}
 	}
