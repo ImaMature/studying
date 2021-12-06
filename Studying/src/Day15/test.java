@@ -26,6 +26,10 @@ public class test {
 		
 			//Board클래스의 필드가 어떻게 메모리 참조가 되는지 궁금합니다.
 		List<Board> boards = new Vector<>();
+			//List는 인터페이스이다. 클래스가 아니다.
+			//Vector<>()를 참조하는 것이다.
+			//Vector<>{}
+		
 		
 		//리스트에 객체 넣기
 		//메모리에 바로 집어넣는 방법
@@ -65,6 +69,8 @@ public class test {
 		//임시객체 t를 통해 리스트 boards의 길이만큼 리스트에 저장되어있는 Board클래스의 필드값 참조?? 
 		for(Board t : boards) {
 			System.out.println(t.subject);
+				//필드에 바로 접근하는 녀석들
+				//생성자와는 상관이 없다.
 			System.out.println(t.content);
 			System.out.println(t.writer);
 	
