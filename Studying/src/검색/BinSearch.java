@@ -1,4 +1,4 @@
-package 알고리즘입문;
+package 검색;
 
 import java.util.Scanner;
 

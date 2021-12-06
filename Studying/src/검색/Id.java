@@ -1,4 +1,4 @@
-package 알고리즘입문;
+package 검색;
 
 //id를 부여하는 클래스
 public class Id {
