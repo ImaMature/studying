@@ -1,4 +1,4 @@
-package 스택;
+package 스택과_큐;
 
 import java.util.Scanner;
 
