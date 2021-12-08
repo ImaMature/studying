@@ -10,7 +10,7 @@ public class 문제2_로또 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		HashSet<Integer> lotto = new HashSet<>();
+		HashSet<Integer> lotto = new HashSet<>(); //set을 왜 Hashset으로??????
 		
 		while(true) {
 			System.out.println("수 입력 [1 ~ 45]: "); int num = sc.nextInt();
