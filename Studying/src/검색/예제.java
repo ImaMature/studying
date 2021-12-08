@@ -45,7 +45,15 @@ public class 예제 {
 			
 			
 			String [] s = a.toString().split("\n");	
+
 			System.out.println(Arrays.toString(s));
+
+			
+			for(int i =0; i<a.length; i++) {
+					
+			}
+			
+
 			System.out.println("1. 가장 키가 큰 사람 2. 가장 키가 작은 사람");
 			int ch = sc.nextInt();
 			if(ch==1) {
