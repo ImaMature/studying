@@ -26,7 +26,7 @@ public class 문제2_로또 {
 				//set명.contains(객체명) : 해당 객체가 set에 존재하는지 여부 확인 (true, false)
 					System.out.println("중복된 값입니다.");
 				}else {
-					//중복이 아니면 입력받은 값 저장
+					//중복이 아니면 입력받은 값 저장 //set은 중복저장안된다던데 왜???
 					lotto.add(num);
 					//값 출력
 					System.out.println("저장완료 : " + lotto);
