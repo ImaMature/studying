@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 
+import model.Member2;
+
 public class app {
 	public static Scanner sc = new Scanner(System.in);
 
@@ -16,6 +18,8 @@ public class app {
 				System.out.println("이름 : ");	 String name = sc.next();
 				System.out.println("전화번호 : ");	 String phone = sc.next();
 				
+				Member2 member2 = new Member2(id, pw, name, phone);
+						
 			}
 		}
 	}
