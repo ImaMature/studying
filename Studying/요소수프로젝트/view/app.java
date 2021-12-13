@@ -19,6 +19,7 @@ public class app {
 				System.out.println("전화번호 : ");	 String phone = sc.next();
 				
 				Member2 member2 = new Member2(id, pw, name, phone);
+				
 						
 			}
 		}
