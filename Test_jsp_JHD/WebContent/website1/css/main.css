@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	font-family:'KOTRA_GOTHIC';
+}
+
+.navbar{
+	border-bottom: solid 2px #eeeeee;
+	width:1200px;
+}
+
+footer{
+	border-top: solid 2px #eeeeee;
+	
+	width:1200px;
+}
+.header_logo{
+	font-size: 1.5rem;
+}
+
+.carousel-item img{
+	width: 100%;
+}
