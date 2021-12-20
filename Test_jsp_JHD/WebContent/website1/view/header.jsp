@@ -19,6 +19,7 @@
 	<div class="fixed-top bg-white">
 		<div class="container">
 			<header class="py-3">
+			
 				<div class="row">
 					<div class="col-md-4 offset-4 text-center">
 						<a href="/Test_jsp_JHD/website1/view/main.jsp" class="header_logo">쇼핑몰</a>
