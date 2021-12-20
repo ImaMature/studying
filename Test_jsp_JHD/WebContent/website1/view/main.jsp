@@ -1,3 +1,4 @@
+<%@page import="java.net.InetAddress"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +9,9 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<%
+		System.out.println(InetAddress.getLocalHost().get);
+	%>
 	
 	<div id="carouselcontent" class="carousel slide" data-ride="carousel" data-interval="2000">
 		<ol class="carousel-indicators">

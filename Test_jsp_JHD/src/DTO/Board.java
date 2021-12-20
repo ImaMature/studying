@@ -21,6 +21,21 @@ public class Board {
 		this.b_view = b_view;
 		
 	}
+	
+	//등록시
+	public Board(String b_title, String b_contents) {
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+	}
+
+	
+	//수정시
+	public Board(String b_title, String b_contents,int b_num ) {
+		this.b_title = b_title;
+		this.b_contents = b_contents;
+		this.b_num = b_num;
+		
+	}
 
 
 
@@ -63,6 +78,7 @@ public class Board {
 	public void setB_view(int b_view) {
 		this.b_view = b_view;
 	}
+
 
 
 
