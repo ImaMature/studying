@@ -9,9 +9,6 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<%
-		System.out.println(InetAddress.getLocalHost().get);
-	%>
 	
 	<div id="carouselcontent" class="carousel slide" data-ride="carousel" data-interval="2000">
 		<ol class="carousel-indicators">
