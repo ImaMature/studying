@@ -1,3 +1,4 @@
+<%@page import="DBPKG.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -59,6 +60,11 @@
 	</script>
 	<%@include file="header.jsp" %>
 	<%@include file="menu.jsp" %>
+	
+	<%
+		MemberDAO memberDAO = new MemberDAO();
+		int custno = memberDAO.getCustno();
+	%>
 	<center>
 		<h2>홈쇼핑 회원 등록</h2>
 		<form action="joinController.jsp" method="post" name="join">

@@ -38,4 +38,20 @@ public class MemberDAO { //1. DB 연동 클래스
 				("jdbc:oracle:thin:@//localhost:1521/xe", "system", "1234");
 		return con; //연결된 인터페이스 반환하기
 	}
+	
+	//1. 마지막 회원 번호 +1 반환 메소드
+	public int getCustno() {
+		String sql = "select max(custno) from member_tbl_02;";
+		
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				return resultSet.getInt(1)+1; //마지막 회원번호 +1 반환
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }
