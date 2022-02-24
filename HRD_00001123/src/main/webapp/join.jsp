@@ -70,7 +70,7 @@
 		<form action="joinController.jsp" method="post" name="join">
 			<table>
 				<tr>
-					<th>회원번호(자동발생)</th><td><input type="text" name="custno"></td>
+					<th>회원번호(자동발생)</th><td><input type="text" name="custno" value=<%=custno %>></td>
 				</tr>
 				<tr>
 					<th>회원성명</th><td><input type="text" name="custname"></td>
