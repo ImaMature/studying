@@ -94,7 +94,7 @@
 					<td colspan="2">
 						<center>
 						<input type="button" value="등록" onclick="regchk();"> 
-						<a href="memberlist.jsp"><button>조회</button></a>
+						<a href="memberlist.jsp"><button type="button">조회</button></a>
 						</center>
 					</td>
 				</tr>
