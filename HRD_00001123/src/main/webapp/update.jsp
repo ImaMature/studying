@@ -66,6 +66,7 @@
 		MemberDAO memberDAO = new MemberDAO();
 		String custno = request.getParameter("custno");
 		MemberDTO memberDTO = memberDAO.getMember(custno);
+		String date = memberDTO.getJoindate().split(" ")[0];
 	%>
 	<center>
 	<h2>홈쇼핑 회원 정보 수정</h2>
@@ -84,7 +85,7 @@
 				<th>회원주소</th><td><input type="text" name="address" value="<%=memberDTO.getAddress()%>"></td>
 			</tr>
 			<tr>
-				<th>가입일자</th><td><input type="text" name="joindate" value="<%=memberDTO.getJoindate()%>"></td>
+				<th>가입일자</th><td><input type="text" name="joindate" value="<%=date%>"></td>
 			</tr>
 			<tr>
 				<th>고객등급 [A:VIP, B:일반, C:직원]</th><td><input type="text" name="grade" value="<%=memberDTO.getGrade().split(" ")[0]%>"></td>

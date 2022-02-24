@@ -8,6 +8,7 @@ public class MemberDTO {
 	private String joindate;
 	private String grade;
 	private String city;
+	private String money;
 	
 	public MemberDTO() {}
 	
@@ -21,6 +22,8 @@ public class MemberDTO {
 		this.grade = grade;
 		this.city = city;
 	}
+	
+	
 
 	public String getCustno() {
 		return custno;
@@ -77,6 +80,16 @@ public class MemberDTO {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public String getMoney() {
+		return money;
+	}
+
+	public void setMoney(String money) {
+		this.money = money;
+	}
+
+	
 	
 	
 }

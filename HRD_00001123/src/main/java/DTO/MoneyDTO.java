@@ -9,6 +9,7 @@ public class MoneyDTO {
 	private String pcode;
 	private String sdate;
 	
+	
 	public MoneyDTO() {}
 	
 	public MoneyDTO(String custno, String salenol, String pcost, String amount, String price, String pcode,
@@ -64,6 +65,8 @@ public class MoneyDTO {
 	public void setSdate(String sdate) {
 		this.sdate = sdate;
 	}
+
+
 	
 	
 }

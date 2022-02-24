@@ -149,4 +149,27 @@ public class MemberDAO { //1. DB 연동 클래스
 		}
 		return false;
 	}
+	
+	//6.매출조회 [조건 X, 그룹 O, join O]
+	public ArrayList <MemberDTO> getMoneyList (){
+		ArrayList<MemberDTO> list = new ArrayList<>();
+		String sql = "select a.custno, a.custname, a.grade, sum(b.price) from member_tbl_02 a join money_tbl_02 b on a.custno = b.custno group by (a.custno, a.custname, a.grade) order by sum(b.price) desc";
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				MemberDTO dto = new MemberDTO();  //빈생성자 => 빈객체
+					dto.setCustno(resultSet.getString(1));
+					dto.setCustname(resultSet.getString(2));
+					dto.setGrade(resultSet.getString(3));
+					dto.setMoney(resultSet.getString(4));
+					list.add(dto);
+			}
+			return list; //while문 종료 시 list 반환
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null; //에러 발생 시 null 반환
+		
+	}
 }
