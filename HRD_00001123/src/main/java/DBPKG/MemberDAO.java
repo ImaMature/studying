@@ -58,7 +58,7 @@ public class MemberDAO { //1. DB 연동 클래스
 	}
 	
 	//2. 회원등록하기
-	public boolean signup(MemberDTO memberDTO) {
+	public boolean join(MemberDTO memberDTO) {
 		String sql = "insert into member_tbl_02 values(?,?,?,?,?,?,?)";
 		try {
 			preparedStatement = con.prepareStatement(sql);
