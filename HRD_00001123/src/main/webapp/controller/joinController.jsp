@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@page import="DTO.MemberDTO"%>
+<%
+request.setCharacterEncoding("utf-8"); // 한글 변수 요청시 꼭 사용하기
 
-</body>
-</html>
+MemberDTO memberDTO = new MemberDTO();
+request.getParameter("custno");
+request.getParameter("custname");
+request.getParameter("phone");
+request.getParameter("address");
+request.getParameter("joindate");
+request.getParameter("grade");
+request.getParameter("city");
+%>

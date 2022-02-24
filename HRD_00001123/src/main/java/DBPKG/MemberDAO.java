@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import DTO.MemberDTO;
+
 public class MemberDAO { //1. DB 연동 클래스
 	
 	private PreparedStatement preparedStatement; // 2. sql 조작 인터페이스
@@ -53,5 +55,26 @@ public class MemberDAO { //1. DB 연동 클래스
 			e.printStackTrace();
 		}
 		return -1;
+	}
+	
+	//2. 회원등록하기
+	public boolean signup(MemberDTO memberDTO) {
+		String sql = "insert into member_tbl_02 values(?,?,?,?,?,?,?)";
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			preparedStatement.setString(1, memberDTO.getCustno());
+			preparedStatement.setString(2, memberDTO.getCustname());
+			preparedStatement.setString(3, memberDTO.getPhone());
+			preparedStatement.setString(4, memberDTO.getAddress());
+			preparedStatement.setString(5, memberDTO.getJoindate());
+			preparedStatement.setString(6, memberDTO.getGrade());
+			preparedStatement.setString(7, memberDTO.getCity());
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
+				
 	}
 }
