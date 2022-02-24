@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import DTO.MemberDTO;
 
@@ -75,6 +76,77 @@ public class MemberDAO { //1. DB 연동 클래스
 			System.out.println(e.getMessage());
 		}
 		return false;
+	}
+	
+	//3. 회원 목록 조회
+	public ArrayList <MemberDTO> getMemberList (){
+		ArrayList<MemberDTO> memberDTOLists = new ArrayList<>();
+		String sql = "select * from member_tbl_02";
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				MemberDTO dto = new MemberDTO(
+						resultSet.getString(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getString(7)
+						);
 				
+				memberDTOLists.add(dto);
+			}
+			return memberDTOLists; //while문 종료 시 list 반환
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return null; //에러 발생 시 null 반환
+		
+	}
+	
+	//4. 회원 개별 조회
+	public MemberDTO getMember(String custno) {
+		String sql = "select * from member_tbl_02 where custno = "+custno;
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			if(resultSet.next()) {
+				MemberDTO dto = new MemberDTO(
+						resultSet.getString(1),
+						resultSet.getString(2),
+						resultSet.getString(3),
+						resultSet.getString(4),
+						resultSet.getString(5),
+						resultSet.getString(6),
+						resultSet.getString(7)
+						);
+				return dto;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+	
+	//5. 회원 정보 수정 [조건 : 회원번호]
+	public boolean updateMember(MemberDTO memberDTO) {
+		String sql = "update member_tbl_02 set custname = ?, phone =?, address =?, joindate=?, grade=?, city=? where custno = ?";
+		try {
+			preparedStatement = con.prepareStatement(sql);
+			preparedStatement.setString(7, memberDTO.getCustno());
+			preparedStatement.setString(1, memberDTO.getCustname());
+			preparedStatement.setString(2, memberDTO.getPhone());
+			preparedStatement.setString(3, memberDTO.getAddress());
+			preparedStatement.setString(4, memberDTO.getJoindate());
+			preparedStatement.setString(5, memberDTO.getGrade());
+			preparedStatement.setString(6, memberDTO.getCity());
+			preparedStatement.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return false;
 	}
 }

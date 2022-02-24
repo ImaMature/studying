@@ -3,9 +3,10 @@
 <%
 request.setCharacterEncoding("utf-8"); // 한글 변수 요청시 꼭 사용하기
 
-//join 페이지에서 변수 요청하여 dto 생성자로 dto 객체 만들기
+//memberlist 페이지에서 변수 요청하여 dto 생성자로 dto 객체 만들기
+String custno = request.getParameter("custno");
 MemberDTO memberDTO = new MemberDTO(
-	request.getParameter("custno"),
+	custno,
 	request.getParameter("custname"),
 	request.getParameter("phone"),
 	request.getParameter("address"),
@@ -13,11 +14,10 @@ MemberDTO memberDTO = new MemberDTO(
 	request.getParameter("grade"),
 	request.getParameter("city")
 	);
-System.out.print(memberDTO.getJoindate());
+
 //db 저장
 MemberDAO memberDAO = new MemberDAO();
-//memberDAO.join(memberDTO);
-
-response.sendRedirect("join.jsp");
+memberDAO.updateMember(memberDTO);
+response.sendRedirect("update.jsp?custno="+custno);
 
 %>
